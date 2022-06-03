@@ -1,6 +1,0 @@
-key,code,creationMoment,title,description,startPeriod,finishPeriod,budget,link,key:item
-chimpum-01,220602,2022/01/01 18:00,Chimpum1,Desc Chimpum1,2022/07/06 10:00,2022/07/13 10:00,EUR 6.0,,item-01
-chimpum-02,220602,2022/01/01 19:00,Chimpum2,Desc Chimpum2,2022/07/07 11:00,2022/07/14 11:00,GBP 11.0,,item-02
-chimpum-03,220602,2022/01/01 20:00,Chimpum3,Desc Chimpum3,2022/07/08 12:00,2022/07/15 12:00,EUR 21.0,,item-03
-chimpum-04,220602,2022/01/01 21:00,Chimpum4,Desc Chimpum4,2022/07/09 13:00,2022/07/16 13:00,GBP 33.7,,item-04
-chimpum-05,220602,2022/01/01 22:00,Chimpum5,Desc Chimpum5,2022/07/10 14:00,2022/07/17 14:00,USD 15.33,,item-05

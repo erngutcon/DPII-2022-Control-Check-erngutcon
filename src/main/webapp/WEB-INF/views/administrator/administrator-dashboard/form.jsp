@@ -158,24 +158,24 @@
 	</tr>
 		
 	<tr>
-		<th scope="row"><acme:message code="administrator.dashboard.form.title.ratio-artifacts-with-chimpums" /></th>
-		<td><acme:print value="${ratioOfArtifactsWithChimpums}" /></td>
+		<th scope="row"><acme:message code="administrator.dashboard.form.title.ratio-components-with-vompos" /></th>
+		<td><acme:print value="${ratioOfComponentsWithVompos}" /></td>
 	</tr>
 	<tr>
-		<th scope="row"><acme:message code="administrator.dashboard.form.title.average-budget-chimpums" /></th>
-		<td><acme:print value="${averageBudgetOfChimpums}" /></td>
+		<th scope="row"><acme:message code="administrator.dashboard.form.title.average-share-vompos" /></th>
+		<td><acme:print value="${averageShareOfVompos}" /></td>
 	</tr>
 	<tr>
-		<th scope="row"><acme:message code="administrator.dashboard.form.title.deviation-budget-chimpums" /></th>
-		<td><acme:print value="${deviationBudgetOfChimpums}" /></td>
+		<th scope="row"><acme:message code="administrator.dashboard.form.title.deviation-share-vompos" /></th>
+		<td><acme:print value="${deviationShareOfVompos}" /></td>
 	</tr>
 	<tr>
-		<th scope="row"><acme:message code="administrator.dashboard.form.title.minimum-budget-chimpums" /></th>
-		<td><acme:print value="${minimumBudgetOfChimpums}" /></td>
+		<th scope="row"><acme:message code="administrator.dashboard.form.title.minimum-share-vompos" /></th>
+		<td><acme:print value="${minimumShareOfVompos}" /></td>
 	</tr>
 	<tr>
-		<th scope="row"><acme:message code="administrator.dashboard.form.title.maximum-budget-chimpums" /></th>
-		<td><acme:print value="${maximumBudgetOfChimpums}" /></td>
+		<th scope="row"><acme:message code="administrator.dashboard.form.title.maximum-share-vompos" /></th>
+		<td><acme:print value="${maximumShareOfVompos}" /></td>
 	</tr>
 
 </table>

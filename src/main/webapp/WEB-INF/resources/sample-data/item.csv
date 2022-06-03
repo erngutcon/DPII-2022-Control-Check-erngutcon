@@ -5,3 +5,4 @@ item-03,TOOL,Item3,AAA-103-A,Eclipse,Eclipse is a IDE for developing,EUR 6.0,htt
 item-04,TOOL,Item4,AAA-104-A,C++,C++ is a compiled language,GBP 33.7,https://www.item.com,false,inventor-01
 item-05,COMPONENT,Item5,AAA-105-A,Java,Java is a object oriented programming language,USD 82.0,https://www.item.com,true,inventor-01
 item-06,TOOL,Item7,AAA-106-A,Ruby,Ruby is a scripting language designed for front-end and back-end web development,EUR 13.0,https://www.item.com,true,inventor-01
+item-07,COMPONENT,Item22,AAA-107-A,Java,Java is a object oriented programming language,EUR 16.0,https://www.item22.com,true,inventor-01

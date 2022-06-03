@@ -1,6 +1,5 @@
 package acme.forms.administrator;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,11 +65,11 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		List<Object> maximumBudgetOfDeniedPatronages;
 		
 		// Control-Check
-		Double ratioOfArtifactsWithChimpums;
-		List<Object> averageBudgetOfChimpums;
-		List<Object> deviationBudgetOfChimpums;
-		List<Object> minimumBudgetOfChimpums;
-		List<Object> maximumBudgetOfChimpums;
+		final Double ratioOfComponentsWithVompos;
+		final List<Object> averageShareOfVompos;
+		final List<Object> deviationShareOfVompos;
+		final List<Object> minimumShareOfVompos;
+		final List<Object> maximumShareOfVompos;
 		
 		
 		
@@ -106,11 +105,11 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		maximumBudgetOfDeniedPatronages = this.repository.maximumBudgetOfDeniedPatronages();
 		
 		// Control-Check
-		ratioOfArtifactsWithChimpums = this.repository.ratioOfArtifactsWithChimpums();
-		averageBudgetOfChimpums = this.repository.averageBudgetOfChimpums();
-		deviationBudgetOfChimpums = this.repository.deviationBudgetOfChimpums();
-		minimumBudgetOfChimpums = this.repository.minimumBudgetOfChimpums();
-		maximumBudgetOfChimpums = this.repository.maximumBudgetOfChimpums();
+		ratioOfComponentsWithVompos = this.repository.ratioOfComponentsWithVompos();
+		averageShareOfVompos = this.repository.averageShareOfVompos();
+		deviationShareOfVompos = this.repository.deviationShareOfVompos();
+		minimumShareOfVompos = this.repository.minimumShareOfVompos();
+		maximumShareOfVompos = this.repository.maximumShareOfVompos();
 		//--------------
 		
 		result = new AdministratorDashboard();
@@ -146,11 +145,11 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setMaximumBudgetOfDeniedPatronages(maximumBudgetOfDeniedPatronages);
 		
 		// Control-Check
-		result.setRatioOfArtifactsWithChimpums(ratioOfArtifactsWithChimpums);
-		result.setAverageBudgetOfChimpums(averageBudgetOfChimpums);
-		result.setDeviationBudgetOfChimpums(deviationBudgetOfChimpums);
-		result.setMinimumBudgetOfChimpums(minimumBudgetOfChimpums);
-		result.setMaximumBudgetOfChimpums(maximumBudgetOfChimpums);
+		result.setRatioOfComponentsWithVompos(ratioOfComponentsWithVompos);
+		result.setAverageShareOfVompos(averageShareOfVompos);
+		result.setDeviationShareOfVompos(deviationShareOfVompos);
+		result.setMinimumShareOfVompos(minimumShareOfVompos);
+		result.setMaximumShareOfVompos(maximumShareOfVompos);
 		//--------------
 	
 		return result;
@@ -168,7 +167,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 									"averageBudgetOfProposedPatronages","deviationBudgetOfProposedPatronages","minimumBudgetOfProposedPatronages","maximumBudgetOfProposedPatronages",
 									"averageBudgetOfAcceptedPatronages","deviationBudgetOfAcceptedPatronages","minimumBudgetOfAcceptedPatronages","maximumBudgetOfAcceptedPatronages",
 									"averageBudgetOfDeniedPatronages","deviationBudgetOfDeniedPatronages","minimumBudgetOfDeniedPatronages","maximumBudgetOfDeniedPatronages",
-									"ratioOfArtifactsWithChimpums","averageBudgetOfChimpums","deviationBudgetOfChimpums","minimumBudgetOfChimpums","maximumBudgetOfChimpums"
+									"ratioOfComponentsWithVompos","averageShareOfVompos","deviationShareOfVompos","minimumShareOfVompos","maximumShareOfVompos"
 									
 			);
 	}

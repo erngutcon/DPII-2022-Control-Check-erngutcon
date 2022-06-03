@@ -1,0 +1,31 @@
+# i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+inventor.vompo.list.label.subject = Subject
+inventor.vompo.list.label.startPeriod = Start Period
+inventor.vompo.list.label.finishPeriod = Finish Period
+
+inventor.vompo.form.label.code = Code 
+inventor.vompo.form.label.creationMoment = Creation moment 
+inventor.vompo.form.label.subject = Subject 
+inventor.vompo.form.label.explanation = Explanation  
+inventor.vompo.form.label.startPeriod = Start Period
+inventor.vompo.form.label.finishPeriod = Finish Period  
+inventor.vompo.form.label.share = Share
+inventor.vompo.form.label.moreInfo = More Info 
+
+inventor.vompo.form.button.create = Create
+inventor.vompo.form.button.update = Update
+inventor.vompo.form.button.delete = Delete
+
+inventor.vompo.form.error.too-close-start-period = Start period at least one month ahead 
+inventor.vompo.form.error.one-week = Only valid one week long period onwards
+inventor.vompo.form.error.non-accepted-currency = Non accepted currency
+inventor.vompo.form.error.negative-share= The amount can't be negative

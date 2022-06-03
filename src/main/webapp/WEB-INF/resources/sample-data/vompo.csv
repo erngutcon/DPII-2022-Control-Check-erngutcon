@@ -1,0 +1,6 @@
+key,code,creationMoment,subject,explanation,startPeriod,finishPeriod,share,moreInfo,key:item
+vompo-01,220101,2022/01/01 18:00,Vompo1,Hola Vompo1,2022/07/06 10:00,2022/07/13 10:00,EUR 6.0,http://www.vompo1.com,item-01
+vompo-02,220102,2022/01/02 19:00,Vompo2,Hola Vompo2,2022/07/07 11:00,2022/07/14 11:00,GBP 11.0,,item-02
+vompo-03,220103,2022/01/03 20:00,Vompo3,Hola Vompo3,2022/07/08 12:00,2022/07/15 12:00,EUR 21.0,http://www.vompo3.com,item-03
+vompo-04,220104,2022/01/04 21:00,Vompo4,Hola Vompo4,2022/07/09 13:00,2022/07/16 13:00,GBP 33.7,,item-04
+vompo-05,220105,2022/01/05 22:00,Vompo5,Hola Vompo5,2022/07/10 14:00,2022/07/17 14:00,USD 15.33,http://www.vompo5.com,item-05

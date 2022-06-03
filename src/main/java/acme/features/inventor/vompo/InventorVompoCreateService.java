@@ -1,33 +1,28 @@
-package acme.features.inventor.chimpum;
+package acme.features.inventor.vompo;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collection;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.Chimpum;
 import acme.entities.Item;
+import acme.entities.Vompo;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
-import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorChimpumCreateService implements AbstractCreateService<Inventor, Chimpum> {
+public class InventorVompoCreateService implements AbstractCreateService<Inventor, Vompo> {
 	
 	@Autowired
-	protected InventorChimpumRepository repository;
+	protected InventorVompoRepository repository;
 	
 	@Override
-	public boolean authorise(final Request<Chimpum> request) {
+	public boolean authorise(final Request<Vompo> request) {
 		assert request != null;
 		
 		boolean result;
@@ -38,33 +33,33 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 	}
 
 	@Override
-	public void bind(final Request<Chimpum> request, final Chimpum entity, final Errors errors) {
+	public void bind(final Request<Vompo> request, final Vompo entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 		 
-		request.bind(entity, errors, "code", "title", "description", "startPeriod", "finishPeriod", "budget", "link");
+		request.bind(entity, errors, "code", "subject", "explanation", "startPeriod", "finishPeriod", "share", "moreInfo");
 	}
 
 	@Override
-	public void unbind(final Request<Chimpum> request, final Chimpum entity, final Model model) {
+	public void unbind(final Request<Vompo> request, final Vompo entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "code", "creationMoment", "title", "description", "startPeriod", "finishPeriod", "budget", "link");		
+		request.unbind(entity, model, "code", "creationMoment", "subject", "explanation", "startPeriod", "finishPeriod", "share", "moreInfo");		
 		model.setAttribute("itemId", entity.getItem().getId());
 	}
 	
 	@Override
-	public Chimpum instantiate(final Request<Chimpum> request) {
+	public Vompo instantiate(final Request<Vompo> request) {
 		assert request != null;
 		
-		Chimpum result;
+		Vompo result;
 		Item item;
 		int itemId;
 		
-		result = new Chimpum();
+		result = new Vompo();
 		
 		// Manage unique code
 		String code = "";
@@ -72,7 +67,7 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 		code = this.createCode();
 		result.setCode(code);
 		
-		Date moment = new Date(System.currentTimeMillis() - 1000);
+		final Date moment = new Date(System.currentTimeMillis() - 1000);
 		result.setCreationMoment(moment);
 		
 		itemId = request.getModel().getInteger("itemId");
@@ -83,7 +78,7 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 	}
 	
 	@Override
-	public void validate(final Request<Chimpum> request, final Chimpum entity, final Errors errors) {
+	public void validate(final Request<Vompo> request, final Vompo entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;		
@@ -92,7 +87,7 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 
 			calendar = new GregorianCalendar();
 			calendar.add(Calendar.MONTH, 1);
-			errors.state(request, entity.getStartPeriod().after(calendar.getTime()), "startPeriod", "inventor.chimpum.form.error.too-close-start-period");
+			errors.state(request, entity.getStartPeriod().after(calendar.getTime()), "startPeriod", "inventor.vompo.form.error.too-close-start-period");
 		}
 		if (!errors.hasErrors("finishPeriod")) {
 			Calendar calendar;
@@ -101,10 +96,10 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 			calendar.setTime(entity.getStartPeriod());
 			calendar.add(Calendar.DAY_OF_MONTH, 7);
 			finish = calendar.getTime();
-			errors.state(request, entity.getFinishPeriod().after(finish), "finishPeriod", "inventor.chimpum.form.error.one-week");
+			errors.state(request, entity.getFinishPeriod().after(finish), "finishPeriod", "inventor.vompo.form.error.one-week");
 		}
 		if(!errors.hasErrors("budget")) {
-			final String upperCaseCurrency = entity.getBudget().getCurrency().toUpperCase();
+			final String upperCaseCurrency = entity.getShare().getCurrency().toUpperCase();
 			boolean accepted = false;
 			
 			// Manage likely currencies
@@ -114,13 +109,13 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 					break;
 				}
 			}
-			errors.state(request, entity.getBudget().getAmount() > 0, "budget", "inventor.chimpum.form.error.negative-budget");
-			errors.state(request, accepted, "budget", "inventor.chimpum.form.error.non-accepted-currency");
+			errors.state(request, entity.getShare().getAmount() > 0, "share", "inventor.vompo.form.error.negative-budget");
+			errors.state(request, accepted, "share", "inventor.vompo.form.error.non-accepted-currency");
 		}
 	}
 			
 	@Override
-	public void create(final Request<Chimpum> request, final Chimpum entity) {
+	public void create(final Request<Vompo> request, final Vompo entity) {
 		assert request != null;
 		assert entity != null;
 		

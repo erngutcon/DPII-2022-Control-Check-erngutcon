@@ -46,9 +46,8 @@ administrator.dashboard.form.label.average-number-jobs-employer =  Número medio
 administrator.dashboard.form.label.average-number-applications-worker =  Número medio de solicitudes por trabajador
 administrator.dashboard.form.label.average-number-applications-employer = Número medio de solicitudes por empleador
 
-administrator.dashboard.form.title.ratio-artifacts-with-chimpums = Ratio de Items con Chimpums
-administrator.dashboard.form.title.average-budget-chimpums = Media del presupuesto de los Chimpums
-administrator.dashboard.form.title.deviation-budget-chimpums = Desviacion del presupuesto de los Chimpums
-administrator.dashboard.form.title.minimum-budget-chimpums = Minimo presupuesto de los Chimpums
-administrator.dashboard.form.title.maximum-budget-chimpums = Maximo presupuesto de los Chimpums
-
+administrator.dashboard.form.title.ratio-components-with-vompos = Ratio de Componentes con Vompos
+administrator.dashboard.form.title.average-share-vompos = Media del share de los Vompos
+administrator.dashboard.form.title.deviation-share-vompos = Desviación del share de los Vompos
+administrator.dashboard.form.title.minimum-share-vompos = Mínimo share de los Vompos
+administrator.dashboard.form.title.maximum-share-vompos = Máximo share de los Vompos

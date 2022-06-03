@@ -10,27 +10,27 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.inventor.chimpum;
+package acme.features.inventor.vompo;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.Chimpum;
+import acme.entities.Vompo;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorChimpumListService implements AbstractListService<Inventor, Chimpum> {
+public class InventorVompoListService implements AbstractListService<Inventor, Vompo> {
 
 	@Autowired
-	protected InventorChimpumRepository repository;
+	protected InventorVompoRepository repository;
 
 	@Override
-	public boolean authorise(final Request<Chimpum> request) {
+	public boolean authorise(final Request<Vompo> request) {
 		assert request != null;
 		
 		boolean result;
@@ -41,21 +41,21 @@ public class InventorChimpumListService implements AbstractListService<Inventor,
 	}
 
 	@Override
-	public Collection<Chimpum> findMany(final Request<Chimpum> request) {
+	public Collection<Vompo> findMany(final Request<Vompo> request) {
 		assert request != null;
 		
-		Collection<Chimpum> result;
-		result = this.repository.findAllChimpumsByInventorId(request.getPrincipal().getActiveRoleId());
+		Collection<Vompo> result;
+		result = this.repository.findAllVomposByInventorId(request.getPrincipal().getActiveRoleId());
 		
 		return result;
 	}
 	
 	@Override
-	public void unbind(final Request<Chimpum> request, final Chimpum entity, final Model model) {
+	public void unbind(final Request<Vompo> request, final Vompo entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "startPeriod", "finishPeriod");
+		request.unbind(entity, model, "subject", "startPeriod", "finishPeriod");
 	}
 }

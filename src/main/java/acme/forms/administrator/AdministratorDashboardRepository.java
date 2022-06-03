@@ -1,12 +1,10 @@
 package acme.forms.administrator;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.patronage.PatronageReport;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -95,19 +93,19 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	List<Object> maximumBudgetOfDeniedPatronages();
 	
 	//Control Check
-	@Query("select 1.0 * count(c)/ (select count(i) FROM Item i) from Chimpum c, Item i where i.id=c.item.id and c.item.id!=NULL")
-	Double ratioOfArtifactsWithChimpums();
+	@Query("select 1.0 * count(v)/ (select count(i) FROM Item i) from Vompo v, Item i where i.id=v.item.id and v.item.type = 'COMPONENT' and v.item.id!=NULL")
+	Double ratioOfComponentsWithVompos();
 	
-	@Query("select c.budget.currency, avg(c.budget.amount) from Chimpum c group by c.budget.currency")
-	List<Object> averageBudgetOfChimpums();
+	@Query("select v.share.currency, avg(v.share.amount) from Vompo v group by v.share.currency")
+	List<Object> averageShareOfVompos();
 
-	@Query("select c.budget.currency, stddev(c.budget.amount) from Chimpum c group by c.budget.currency")
-	List<Object> deviationBudgetOfChimpums();
+	@Query("select v.share.currency, stddev(v.share.amount) from Vompo v group by v.share.currency")
+	List<Object> deviationShareOfVompos();
 
-	@Query("select c.budget.currency, min(c.budget.amount) from Chimpum c group by c.budget.currency")
-	List<Object> minimumBudgetOfChimpums();
+	@Query("select v.share.currency, min(v.share.amount) from Vompo v group by v.share.currency")
+	List<Object> minimumShareOfVompos();
 
-	@Query("select c.budget.currency, max(c.budget.amount) from Chimpum c group by c.budget.currency")
-	List<Object> maximumBudgetOfChimpums();
+	@Query("select v.share.currency, max(v.share.amount) from Vompo v group by v.share.currency")
+	List<Object> maximumShareOfVompos();
 	
 }
